@@ -72,6 +72,13 @@ public class WelcomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle("Welcome");
+
+        binding.welcomeContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                wListener.goToRegister();
+            }
+        });
     }
 
     WelcomeListener wListener;
@@ -84,6 +91,7 @@ public class WelcomeFragment extends Fragment {
 
     interface WelcomeListener{
         void goToWelcomeScreen();
+        void goToRegister();
     }
 
 }
